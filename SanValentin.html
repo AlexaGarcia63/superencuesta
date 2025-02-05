@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín? ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            color: white;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .no {
+            background-color: white;
+            color: red;
+        }
+        .hidden-img {
+            display: none; /* Para ocultarlas al inicio */
+            width: 300px;
+            height: auto;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>¿Quieres ser mi San Valentín? ❤️</h1>
+    <button class="yes" onclick="showLove()">Sí</button>
+    <button class="no" id="no-btn" onclick="changeText(this)">No</button>
+    <br>
+    <img id="angry-cat" class="hidden-img" src="gatoenojado.jpeg" alt="Gato enojado">
+    <img id="love-cat" class="hidden-img" src="gatoenamorado.jpeg" alt="Gato enamorado">
+</div>
+
+<script>
+    function changeText(button) {
+        let catImage = document.getElementById("angry-cat");
+        let loveCat = document.getElementById("love-cat");
+
+        loveCat.style.display = "none"; // Oculta el gato enamorado
+
+        if (button.innerText === "No") {
+            button.innerText = "¿Estás seguro? 😢";
+            catImage.style.display = "block"; // Muestra el gato enojado
+        } else {
+            alert('¡Piénsalo bien! 🥺');
+        }
+    }
+
+    function showLove() {
+        let loveCat = document.getElementById("love-cat");
+        let angryCat = document.getElementById("angry-cat");
+
+        angryCat.style.display = "none"; // Oculta el gato enojado
+        loveCat.style.display = "block"; // Muestra el gato enamorado
+        alert('No tenias opción, precioso <3 te amo muchisisisimo');
+    }
+</script>
+
+</body>
+</html>
